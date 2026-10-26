@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="SADEZ: perfumes, relojes y combos. Compra fácil y confirma tu pedido por WhatsApp.">
+  <title>SADEZ | Perfumes, relojes y combos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/products.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="SADEZ inicio">
+      <span class="brand-name">SADEZ</span>
+      <span class="brand-subtitle">FRAGANCIAS & ACCESORIOS</span>
+    </a>
+    <nav class="main-nav" aria-label="Navegación principal">
+      <a href="#catalogo">Catálogo</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <button class="cart-button" id="open-cart" aria-label="Abrir carrito">
+      <span>Mi carrito</span><span class="cart-count" id="cart-count">0</span>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">TU ESTILO. TU ESENCIA.</p>
+        <h1>Detalles que<br><em>dejan huella.</em></h1>
+        <p class="hero-description">Encuentra tu próxima fragancia, un reloj para cada ocasión o el combo perfecto para regalar.</p>
+        <a class="primary-button" href="#catalogo">Explorar catálogo <span aria-hidden="true">↗</span></a>
+        <div class="hero-notes"><span>✳ Selección especial</span><span>✳ Pedido por WhatsApp</span></div>
+      </div>
+      <div class="hero-art" aria-label="Selección de perfumes y reloj">
+        <div class="hero-circle"></div>
+        <div class="hero-label">SADEZ<br><small>ESSENTIALS</small></div>
+        <div class="hero-bottle bottle-one"><span>SADEZ</span><small>EAU DE PARFUM</small></div>
+        <div class="hero-bottle bottle-two"><span>SADEZ</span><small>COLLECTION</small></div>
+        <div class="hero-watch"><div class="watch-strap"></div><div class="watch-face"><i></i></div></div>
+        <div class="hero-caption">LA ELEGANCIA ESTÁ EN LOS DETALLES.</div>
+      </div>
+    </section>
+
+    <section class="trust-strip" aria-label="Beneficios">
+      <div><span class="trust-icon">◇</span><span><b>Compra sencilla</b><small>En pocos pasos</small></span></div>
+      <div><span class="trust-icon">↗</span><span><b>Atención personal</b><small>Confirmación por WhatsApp</small></span></div>
+      <div><span class="trust-icon">⌂</span><span><b>Entrega coordinada</b><small>Datos de envío en el pedido</small></span></div>
+    </section>
+
+    <section class="catalog-section" id="catalogo">
+      <div class="section-heading">
+        <div><p class="eyebrow">DESCUBRE SADEZ</p><h2>Encuentra tu favorito</h2></div>
+        <p>Una selección para cada estilo y cada momento.</p>
+      </div>
+      <div class="catalog-tools">
+        <div class="filter-tabs" role="group" aria-label="Filtrar productos">
+          <button class="filter-tab active" data-category="Todos">Todos</button>
+          <button class="filter-tab" data-category="Perfumes">Perfumes</button>
+          <button class="filter-tab" data-category="Relojes">Relojes</button>
+          <button class="filter-tab" data-category="Combos">Combos</button>
+        </div>
+        <label class="search-box"><span aria-hidden="true">⌕</span><input id="search-input" type="search" placeholder="Buscar producto..." aria-label="Buscar producto"></label>
+      </div>
+      <div class="product-grid" id="product-grid" aria-live="polite"></div>
+      <p class="catalog-note">Los productos y precios de muestra se pueden editar en <code>js/products.js</code>.</p>
+    </section>
+
+    <section class="brand-story" id="nosotros">
+      <div class="story-mark">S.</div>
+      <div><p class="eyebrow">EL SELLO SADEZ</p><h2>Tu esencia habla<br>antes que tú.</h2></div>
+      <p>Creemos que los pequeños detalles hacen la diferencia. Elige tus favoritos y envíanos tu pedido; confirmaremos disponibilidad y entrega contigo por WhatsApp.</p>
+    </section>
+
+    <section class="contact-section" id="contacto">
+      <div><p class="eyebrow">¿NECESITAS AYUDA?</p><h2>Hablemos por WhatsApp.</h2><p>Resolvemos tus dudas y coordinamos la entrega de tu pedido.</p></div>
+      <a class="outline-button" href="https://wa.me/573002733324" target="_blank" rel="noopener">Escribir a SADEZ ↗</a>
+    </section>
+  </main>
+
+  <footer class="site-footer"><a class="footer-brand" href="#">SADEZ</a><span>Perfumes · Relojes · Combos</span><span>© <span id="year"></span> SADEZ. Todos los derechos reservados.</span></footer>
+
+  <div class="drawer-backdrop" id="drawer-backdrop"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-labelledby="cart-title" aria-hidden="true">
+    <div class="drawer-header"><div><p class="eyebrow">TU SELECCIÓN</p><h2 id="cart-title">Mi carrito</h2></div><button class="icon-button" id="close-cart" aria-label="Cerrar carrito">×</button></div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-empty" id="cart-empty"><span>◇</span><h3>Tu carrito está vacío</h3><p>Agrega tus favoritos y aparecerán aquí.</p><button class="text-button" id="continue-shopping">Ver catálogo →</button></div>
+    <div class="cart-summary" id="cart-summary"><div><span>Subtotal</span><strong id="cart-subtotal">$0</strong></div><small>El envío se coordina y confirma por WhatsApp.</small><button class="primary-button full-button" id="go-checkout">Continuar con mis datos <span>→</span></button></div>
+  </aside>
+
+  <div class="modal-backdrop" id="checkout-backdrop"></div>
+  <section class="checkout-modal" id="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkout-title" aria-hidden="true">
+    <div class="checkout-header"><div><p class="eyebrow">ÚLTIMO PASO</p><h2 id="checkout-title">Datos de entrega</h2><p>Revisa tus datos antes de abrir WhatsApp.</p></div><button class="icon-button" id="close-checkout" aria-label="Cerrar formulario">×</button></div>
+    <form id="checkout-form">
+      <div class="form-grid">
+        <label class="form-field full"><span>Nombre completo *</span><input name="name" autocomplete="name" required maxlength="100" placeholder="Tu nombre y apellido"></label>
+        <label class="form-field"><span>Teléfono *</span><input name="phone" type="tel" inputmode="tel" autocomplete="tel" required pattern="[0-9+() -]{7,20}" maxlength="20" placeholder="Ej. 3001234567"></label>
+        <label class="form-field"><span>Departamento *</span><select name="department" id="department" required><option value="">Selecciona tu departamento</option></select></label>
+        <label class="form-field"><span>Ciudad o municipio *</span><input name="city" autocomplete="address-level2" required maxlength="80" placeholder="Ej. Cúcuta"></label>
+        <label class="form-field"><span>Dirección de vivienda *</span><input name="address" autocomplete="street-address" required maxlength="180" placeholder="Calle, carrera, número, barrio"></label>
+        <label class="form-field full"><span>Indicaciones para la entrega (opcional)</span><textarea name="notes" rows="2" maxlength="300" placeholder="Apartamento, color de la casa, referencia..."></textarea></label>
+      </div>
+      <div class="payment-info"><span class="payment-icon">✓</span><div><b>Pago contraentrega</b><small>El pago y el costo de envío se coordinan al confirmar el pedido por WhatsApp.</small></div></div>
+      <div class="checkout-total"><span>Total de productos</span><strong id="checkout-total">$0</strong></div>
+      <p class="form-error" id="form-error" role="alert"></p>
+      <button class="primary-button full-button" type="submit">Enviar pedido por WhatsApp <span>↗</span></button>
+      <p class="privacy-note">Al continuar, tus datos se incluirán en el mensaje de WhatsApp para gestionar este pedido.</p>
+    </form>
+  </section>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
